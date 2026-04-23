@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+.card {
+    background: white;
+    color: black;
+}
+
+nav {
+    background: #333;
+}
+
+nav a {
+    color: yellow;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Card */
+.card {
+    background: white;
+    color: black;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* Text */
+.card {
+    margin-bottom: 10px;
+}
+
+/* Image */
+img {
+    width: 100%;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input, button {
+    padding: 8px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 20px;
+}
