@@ -1,83 +1,199 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- Root Variables & Base Styling --- */
+:root {
+    --primary-color: #2563eb; /* Biru modern */
+    --dark-color: #1e293b;
+    --light-bg: #f8fafc;
+    --border-color: #e2e8f0;
+    --transition: all 0.3s ease;
 }
 
 body {
-    background: black;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    line-height: 1.6;
 }
 
-.card {
-    background: white;
-    color: black;
-}
-
-nav {
-    background: #333;
-}
-
-nav a {
-    color: yellow;
-}
-
-/* Container */
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-}
-
-/* Card */
-.card {
-    background: white;
-    color: black;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-/* Text */
-.card {
-    margin-bottom: 10px;
-}
-
-/* Image */
-img {
-    width: 100%;
-}
-
-/* Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
-
-th {
-    background: #333;
-    color: white;
-}
-
-/* Form */
-form {
+/* --- Header & Logo --- */
+.header {
+    padding: 20px 10%;
+    background: #fff;
+    border-bottom: 2px solid var(--border-color);
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-input, button {
-    padding: 8px;
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
-/* Footer */
-footer {
+/* --- Layout Utility --- */
+.border-bottom {
+    border-bottom: 1px solid var(--border-color);
+    padding: 60px 10%;
+}
+
+.section-title {
     text-align: center;
-    margin: 20px;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    background: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #64748b;
+}
+
+/* --- Services / Product Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+/* Efek Interaktif pada Card Produk */
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.service-box:hover img {
+    transform: scale(1.1); /* Zoom gambar saat hover */
+}
+
+/* --- Form Tambah Produk --- */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    background: #1d4ed8;
+    letter-spacing: 1px; /* Efek teks melebar sedikit */
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .border-bottom { padding: 40px 5%; }
 }
